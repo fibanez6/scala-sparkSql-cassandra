@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="scala-sparkSql-cassandra">
+    <profile name="sbt 1" modules="scala-sparkSql-cassandra,scala-sparkSql-cassandra.connection,scala-sparkSql-cassandra.job">
       <parameters>
         <parameter value="-target:jvm-1.8" />
       </parameters>

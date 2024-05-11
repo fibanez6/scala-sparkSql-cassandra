@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80eaa4d3-c524-4ad5-a29d-07b39b74fd4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/Versions.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/plugins.sbt " afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/com/fibanez/spark/cassandra_connect_test.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connection/src/test/scala/com/fibanez/spark/job/cassandra_connect_test.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/connection.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/job.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Write.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/previous_employees_by_title.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/Dependencies.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Versions.scala" beforeDir="false" afterPath="$PROJECT_DIR$/project/Versions.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/com/fibanez/spark/cassandra_connect_test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection/cassandra_connect_test.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +31,43 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fibanez6&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fibanez6/scala-sparkSql-cassandra.git&quot;,
+    &quot;accountId&quot;: &quot;8a0bc9c8-4945-4ba8-a2a4-3abdceb6d7c6&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2gIqAUKxjDfM9qRLQRPOuzkXW7k" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,9 +79,10 @@
     "Application.cassandraConnect.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "corretto-11",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/Fernando.Ibanez/workplace/scala/scala-sparkSql-cassandra/scala-sparkSql-cassandra",
+    "last_opened_file_path": "/Users/Fernando.Ibanez/workplace/scala/scala-sparkSql-cassandra/doc",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,10 +101,35 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/doc" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/job" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection" />
+      <recent name="$PROJECT_DIR$/connection/src/test/scala/com/fibanez/spark/job" />
+      <recent name="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/connection" />
+      <recent name="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/job" />
+      <recent name="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.fibanez.spark" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CassandraConnect">
+    <configuration name="CassandraConnect" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.fibanez.spark.CassandraConnect" />
+      <module name="scala-sparkSql-cassandra.connection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fibanez.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cassandraConnect" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.fibanez.spark.cassandraConnect" />
       <module name="scala-sparkSql-cassandra" />
@@ -91,6 +145,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CassandraConnect" />
         <item itemvalue="Application.cassandraConnect" />
       </list>
     </recent_temporary>
@@ -114,7 +169,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715395297666</updated>
-      <workItem from="1715395298562" duration="3581000" />
+      <workItem from="1715395298562" duration="5669000" />
+      <workItem from="1715401287704" duration="3378000" />
     </task>
     <servers />
   </component>

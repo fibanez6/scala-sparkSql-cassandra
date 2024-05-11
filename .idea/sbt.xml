@@ -8,6 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/connection" />
+            <option value="$PROJECT_DIR$/job" />
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
