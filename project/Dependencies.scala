@@ -14,22 +14,39 @@ object Dependencies {
       .exclude("com.google.protobuf", "protobuf-java")
   }
 
-  object Spark {
+  object Datastax {
     val dependencies = Seq(
-      "com.datastax.spark" % "spark-cassandra-connector_2.12" % ApacheSpark,
-      "org.apache.spark"  %% "spark-core"                     % ApacheSpark,
-      "org.apache.spark"  %% "spark-streaming"                % ApacheSpark,
-      "org.apache.spark"  %% "spark-sql"                      % ApacheSpark,
+      "com.datastax.spark" % "spark-cassandra-connector_2.12" % ApacheSpark
     ).map(_.logbackExclude().googleExclude())
   }
 
-//  object Connection {
-//    val dependencies = Seq(
+  object Spark {
+    val sparkCore       = "org.apache.spark" %% "spark-core"      % ApacheSpark // ApacheV2
+    val sparkStreaming  = "org.apache.spark" %% "spark-streaming" % ApacheSpark // ApacheV2
+    val sparkSql        = "org.apache.spark" %% "spark-sql"       % ApacheSpark // ApacheV2
+
+    // to run with Intellj
+    val dependenciesIncluded = Seq(
+      sparkCore,
+      sparkStreaming,
+      sparkSql
+    ).map(_.logbackExclude().googleExclude())
+    
+    // To run it with console
+    val dependenciesProvided = Seq(
+      sparkCore       % "provided",
+      sparkStreaming  % "provided",
+      sparkSql        % "provided"
+    ).map(_.logbackExclude().googleExclude())
+  }
+
+  object Common {
+    val dependencies = Seq(
 //      "log4j"                     % "log4j"         % Log4j,
 //      "joda-time"                 % "joda-time"     % JodaTime,
-//      "com.github.jnr"            % "jnr-posix"     % JnrPosix
-//    )
-//  }
+      "com.github.jnr"            % "jnr-posix"     % JnrPosix
+    )
+  }
     
   object TestCommon {
     val mockito         = "org.mockito"       % "mockito-all"      % Mockito

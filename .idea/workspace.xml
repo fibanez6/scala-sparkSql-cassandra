@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80eaa4d3-c524-4ad5-a29d-07b39b74fd4c" name="Changes" comment="refactored with modules">
-      <change afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Read.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/Spark-master-ui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/ETL.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Manipulate.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection/CassandraConnect.scala" beforeDir="false" afterPath="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection/CassandraConnect.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/src/test/scala/com/fibanez/spark/job/cassandra_connect_test.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/connection.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/connection.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/job.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/job.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Read.scala" beforeDir="false" afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Read.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Write.scala" beforeDir="false" afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Write.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Dependencies.scala" beforeDir="false" afterPath="$PROJECT_DIR$/project/Dependencies.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/plugins.sbt " beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.37356323",
     "vue.rearranger.settings.migration": "true"
@@ -187,8 +189,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Write" />
-        <item itemvalue="Application.Read" />
         <item itemvalue="Application.CassandraConnect" />
+        <item itemvalue="Application.Read" />
         <item itemvalue="Application.cassandraConnect" />
       </list>
     </recent_temporary>
@@ -213,7 +215,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715395297666</updated>
       <workItem from="1715395298562" duration="5669000" />
-      <workItem from="1715401287704" duration="15132000" />
+      <workItem from="1715401287704" duration="29517000" />
     </task>
     <task id="LOCAL-00001" summary="refactored with modules">
       <option name="closed" value="true" />
@@ -223,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715404988252</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactored with modules">
+      <option name="closed" value="true" />
+      <created>1715479626825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715479626825</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

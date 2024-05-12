@@ -11,7 +11,10 @@
 
 * Cassandra Database 4.1.x or higher
     * Use the [Cassandra docker-compose](https://github.com/fibanez6/docker-compose/tree/main/cassandra)
+* Apache Spark [3.0.x](https://spark.apache.org/downloads.html)
+* Apache Hadoop [3.4.x](https://hadoop.apache.org/)
 * sbt
+* Java 1.8
 
 ## Features
 | Dependency          | Artifact                       | Version |
@@ -21,6 +24,49 @@
 | org.apache.spark    | spark-core                     | 3.5.0   |
 | org.apache.spark    | spark-streaming                | 3.5.0   |
 | org.apache.spark    | spark-sql                      | 3.5.0   |
+
+
+### **1. Navigate to Spark Directory and Start Spark**
+#### **1.1 Setup Env**
+```bash
+export SPARK_HOME="/path/to/spark-3.5.1-bin-hadoop3"
+export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
+
+export HADOOP_HOME=/path/to/hadoop-3.4.0
+export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH
+```
+
+#### **1.1 Start Master**
+```bash
+/path/to/spark-3.5.1-bin-hadoop3/sbin/start-master.sh
+```
+#### **1.2 - Get Master URL**
+Navigate to localhost:8080 and copy the master URL or check in the logs:
+```text
+-- i.e
+24/05/12 15:17:53 INFO Master: Starting Spark master at spark://MAC6911:7077
+```
+#### **1.3 - Start Worker**
+```bash
+/path/to/spark-3.5.1-bin-hadoop3/sbin/start-worker.sh <master-url>
+```
+#### **1.4 - Master UI**
+![Spark Master UI](./img/Spark-master-ui.png)
+
+### **2. Run assembly in sbt server**
+```bash
+sbt assembly
+# or
+sbt connection/assembly
+```
+
+### **4. Run**
+```bash
+$SPARK_HOME/bin/spark-submit \
+  --class com.fibanez.spark.CassandraConnect \
+  --master spark://MAC6911:7077 \
+  /Users/Fernando.Ibanez/workplace/scala/scala-sparkSql-cassandra/connection/target/scala-2.12/connection-assembly-0.1.0-SNAPSHOT.jar
+```
 
 ## Sample of use
 
