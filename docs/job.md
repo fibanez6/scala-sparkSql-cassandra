@@ -4,7 +4,7 @@
 
 | What                                     | Where                                                                                     |
 |------------------------------------------|-------------------------------------------------------------------------------------------|
-| Anant/example-cassandra-spark-job-scala  | [Github](https://github.com/Anant/example-cassandra-spark-job-scala/blob/main/README.md)  |
+| Anant/scala-sparkSql-cassandra  | [Github](https://github.com/Anant/scala-sparkSql-cassandra/blob/main/README.md)  |
 
 ## Requirements
 
@@ -24,50 +24,59 @@
 
 ## Steps
 
-### **1. - Create `demo` keyspace**
+### **1. Run assembly in sbt server**
+```bash
+sbt assembly
+# or
+sbt job / assembly
+```
+
+### **2. - Create `demo` keyspace**
 ```bash
 CREATE KEYSPACE demo WITH REPLICATION={'class': 'SimpleStrategy', 'replication_factor': 1};
+# or
+CREATE KEYSPACE demo WITH REPLICATION={'class':'NetworkTopologyStrategy','DC1':'2'};
 ```
 
-### **2. Read Spark Job**
+### **3. Read Spark Job**
 In this job, we will look at a CSV with 100,000 records and load it into a dataframe. Once read, we will display the first 20 rows.
 ```bash
-./bin/spark-submit --class sparkCassandra.Read \
---master <master-url> \
---files /path/to/example-cassandra-spark-job-scala/previous_employees_by_title.csv \
-/path/to/example-cassandra-spark-job-scala/target/scala-2.12/example-cassandra-spark-job-scala-assembly-0.1.0-SNAPSHOT.jar
+spark-submit --class com.fibanez.spark.Read \
+  --master localhost:9042 \
+  --files /path/to/scala-sparkSql-cassandra/previous_employees_by_title.csv \
+ /path/to/scala-sparkSql-cassandra/job/target/scala-2.12/job-assembly-0.1.0-SNAPSHOT.jar
 ```
 
-### **3. Manipulate Spark Job**
+### **4. Manipulate Spark Job**
 In this job, we will do the same read; however, we will now take the `first_day` and `last_day` columns and calculate the absolute value difference in days worked. Again, then display the top 20 rows.
 
 ```bash
-./bin/spark-submit --class sparkCassandra.Manipulate \
+./bin/spark-submit --class com.fibanez.spark.Manipulate \
 --master <master-url> \
---files /path/to/example-cassandra-spark-job-scala/previous_employees_by_title.csv \
-/path/to/example-cassandra-spark-job-scala/target/scala-2.12/example-cassandra-spark-job-scala-assembly-0.1.0-SNAPSHOT.jar
+--files /path/to/scala-sparkSql-cassandra/previous_employees_by_title.csv \
+/path/to/scala-sparkSql-cassandra/target/scala-2.12/scala-sparkSql-cassandra-assembly-0.1.0-SNAPSHOT.jar
 ```
 
-### **4. Write to Cassandra Spark Job**
+### **5. Write to Cassandra Spark Job**
 In this job, we will do the same thing we did in the manipulate job; however, we will now write the outputted dataframe to Cassandra instead of just displaying it to the console.
 ```bash
-./bin/spark-submit --class sparkCassandra.Write \
+./bin/spark-submit --class com.fibanez.spark.Write \
 --master <master-url> \
 --conf spark.cassandra.connection.host=127.0.0.1 \
 --conf spark.cassandra.connection.port=9042 \
 --conf spark.sql.extensions=com.datastax.spark.connector.CassandraSparkExtensions \
---files /path/to/example-cassandra-spark-job-scala/previous_employees_by_title.csv \
-/path/to/example-cassandra-spark-job-scala/target/scala-2.12/example-cassandra-spark-job-scala-assembly-0.1.0-SNAPSHOT.jar
+--files /path/to/scala-sparkSql-cassandra/previous_employees_by_title.csv \
+/path/to/scala-sparkSql-cassandra/target/scala-2.12/scala-sparkSql-cassandra-assembly-0.1.0-SNAPSHOT.jar
 ```
 
-### **5. SparkSQL Spark Job**
+### **6. SparkSQL Spark Job**
 In this job, we will write the CSV data into one Cassandra table and then pick it up using SparkSQL and transform it at the same time. We will then write the newly transformed data into a new Cassandra table.
 ```bash
-./bin/spark-submit --class sparkCassandra.ETL \
+./bin/spark-submit --class com.fibanez.spark.ETL \
 --master <master-url> \
 --conf spark.cassandra.connection.host=127.0.0.1 \
 --conf spark.cassandra.connection.port=9042 \
 --conf spark.sql.extensions=com.datastax.spark.connector.CassandraSparkExtensions \
---files /path/to/example-cassandra-spark-job-scala/previous_employees_by_title.csv \
-/path/to/example-cassandra-spark-job-scala/target/scala-2.12/example-cassandra-spark-job-scala-assembly-0.1.0-SNAPSHOT.jar
+--files /path/to/scala-sparkSql-cassandra/previous_employees_by_title.csv \
+/path/to/scala-sparkSql-cassandra/target/scala-2.12/scala-sparkSql-cassandra-assembly-0.1.0-SNAPSHOT.jar
 ```

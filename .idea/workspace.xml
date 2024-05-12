@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80eaa4d3-c524-4ad5-a29d-07b39b74fd4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connection/src/test/scala/com/fibanez/spark/job/cassandra_connect_test.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/connection.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/job.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Write.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/previous_employees_by_title.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/Dependencies.scala" afterDir="false" />
+    <list default="true" id="80eaa4d3-c524-4ad5-a29d-07b39b74fd4c" name="Changes" comment="refactored with modules">
+      <change afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Read.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Versions.scala" beforeDir="false" afterPath="$PROJECT_DIR$/project/Versions.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/fibanez/spark/cassandra_connect_test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection/cassandra_connect_test.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection/CassandraConnect.scala" beforeDir="false" afterPath="$PROJECT_DIR$/connection/src/main/scala/com/fibanez/spark/connection/CassandraConnect.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/job.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/job.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Write.scala" beforeDir="false" afterPath="$PROJECT_DIR$/job/src/main/scala/com/fibanez/spark/Write.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Dependencies.scala" beforeDir="false" afterPath="$PROJECT_DIR$/project/Dependencies.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/plugins.sbt " beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +31,23 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="scala-sparkSql-cassandra" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="scala-sparkSql-cassandra" type="f1a62948:ProjectNode" />
+                <item name="scala-sparkSql-cassandra-build" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="scala-sparkSql-cassandra" type="f1a62948:ProjectNode" />
+                <item name="scala-sparkSql-cassandra-build" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -76,13 +87,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CassandraConnect.executor": "Run",
+    "Application.Read.executor": "Run",
+    "Application.Write.executor": "Run",
     "Application.cassandraConnect.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "corretto-11",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/Fernando.Ibanez/workplace/scala/scala-sparkSql-cassandra/doc",
+    "last_opened_file_path": "/Users/Fernando.Ibanez/workplace/scala/scala-sparkSql-cassandra/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,6 +115,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project" />
       <recent name="$PROJECT_DIR$/doc" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/job" />
@@ -116,10 +131,36 @@
       <recent name="com.fibanez.spark" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CassandraConnect">
+  <component name="RunManager" selected="Application.Write">
     <configuration name="CassandraConnect" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.fibanez.spark.CassandraConnect" />
       <module name="scala-sparkSql-cassandra.connection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fibanez.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Read" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.fibanez.spark.Read" />
+      <module name="scala-sparkSql-cassandra.job" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fibanez.spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Write" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.fibanez.spark.Write" />
+      <module name="scala-sparkSql-cassandra.job" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fibanez.spark.*" />
@@ -145,6 +186,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Write" />
+        <item itemvalue="Application.Read" />
         <item itemvalue="Application.CassandraConnect" />
         <item itemvalue="Application.cassandraConnect" />
       </list>
@@ -170,11 +213,24 @@
       <option name="presentableId" value="Default" />
       <updated>1715395297666</updated>
       <workItem from="1715395298562" duration="5669000" />
-      <workItem from="1715401287704" duration="3378000" />
+      <workItem from="1715401287704" duration="15132000" />
     </task>
+    <task id="LOCAL-00001" summary="refactored with modules">
+      <option name="closed" value="true" />
+      <created>1715404988252</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715404988252</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored with modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored with modules" />
   </component>
 </project>

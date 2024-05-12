@@ -1,15 +1,11 @@
 package com.fibanez.spark
 
 import com.datastax.spark.connector._
-import org.apache.log4j._
 import org.apache.spark._
 import org.apache.spark.sql.SparkSession
 
 object CassandraConnect {
   def main(args:Array[String]): Unit = {
-    Logger.getLogger("org").setLevel(Level.ERROR)
-    Logger.getLogger("com").setLevel(Level.ERROR)
-
     val conf=new SparkConf()
     conf.set("spark.master","local[*]")
     conf.set("spark.app.name","exampleApp")
