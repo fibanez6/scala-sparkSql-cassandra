@@ -11,7 +11,6 @@
 * Cassandra Database 4.1.x or higher
   * Use the [Cassandra docker-compose](https://github.com/fibanez6/docker-compose/tree/main/cassandra)
 * Apache Spark [3.0.x](https://spark.apache.org/downloads.html)
-* Apache Hadoop [3.4.x](https://hadoop.apache.org/)
 * sbt
 * Java 1.8
 
@@ -31,14 +30,11 @@
 ```bash
 export SPARK_HOME="/path/to/spark-3.5.1-bin-hadoop3"
 export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
-
-export HADOOP_HOME=/path/to/hadoop-3.4.0
-export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH
 ```
 
 #### **1.1 Start Master**
 ```bash
-/path/to/spark-3.5.1-bin-hadoop3/sbin/start-master.sh
+$SPARK_HOME/sbin/start-master.sh
 ```
 #### **1.2 - Get Master URL**
 Navigate to localhost:8080 and copy the master URL or check in the logs:
@@ -48,7 +44,7 @@ Navigate to localhost:8080 and copy the master URL or check in the logs:
 ```
 #### **1.3 - Start Worker**
 ```bash
-/path/to/spark-3.5.1-bin-hadoop3/sbin/start-worker.sh <master-url>
+$SPARK_HOME/sbin/start-worker.sh <master-url>
 ```
 #### **1.4 - Master UI**
 ![Spark Master UI](./img/Spark-master-ui.png)
